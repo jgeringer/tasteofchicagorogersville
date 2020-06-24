@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import styles from './hero.module.css'
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -31,6 +30,7 @@ const ResumeDetail = ({ data }) => {
     }
     return (
       <div>
+        <p className={styles.heroTitle}>{data.title}</p>
         {documentToReactComponents(firstRichContent.body.json, options)}
       </div>
     )
@@ -49,17 +49,6 @@ const ResumeDetail = ({ data }) => {
   `
   export default ResumeDetail
   
-
-// const Bold = ({ children }) => <span className="bold">{children}</span>
-// const Text = ({ children }) => <p className="align-center">{children}</p>
-// const options = {
-//   renderMark: {
-//     [MARKS.BOLD]: text => <Bold>{text}</Bold>,
-//   },
-//   renderNode: {
-//     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
-//   },
-// }
 
 
 
